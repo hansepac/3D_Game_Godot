@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://vupfism0y8ub"]
+[gd_scene load_steps=13 format=3 uid="uid://vupfism0y8ub"]
 
 [ext_resource type="PackedScene" uid="uid://tsoo6w1bhvlv" path="res://assets/terrain/terrain_01.blend" id="1_o2xrp"]
 [ext_resource type="PackedScene" uid="uid://crxot53i2agys" path="res://assets/terrain/rock_01.blend" id="2_6w6k2"]
 [ext_resource type="PackedScene" uid="uid://dfp4lkeer65n" path="res://assets/terrain/tree_01.blend" id="3_t3scp"]
 [ext_resource type="PackedScene" uid="uid://caae1vixsym55" path="res://entity/player/player.tscn" id="4_bh30d"]
+[ext_resource type="PackedScene" uid="uid://bfy5blxn8a0x4" path="res://assets/weapons/projectiles/projectile_01.blend" id="5_8aplx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -74,3 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99407, 0, 12.9371)
 
 [node name="tree_05" parent="." instance=ExtResource("3_t3scp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4273, 0, 11.3465)
+
+[node name="projectile_01" parent="." instance=ExtResource("5_8aplx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.718928, 2.38419e-07, -6.92394)
