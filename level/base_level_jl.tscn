@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgnvj8xvn24ad"]
 
 [ext_resource type="PackedScene" uid="uid://vupfism0y8ub" path="res://map/base_map.tscn" id="1_kn7mw"]
-[ext_resource type="PackedScene" uid="uid://clmjonh52s66n" path="res://entity/player/player.tscn" id="2_ru0fd"]
-[ext_resource type="PackedScene" uid="uid://cxlna01qimfy" path="res://entity/dummy.tscn" id="3_im0bk"]
+[ext_resource type="PackedScene" uid="uid://clmjonh52s66n" path="res://entity/player/basic_player.tscn" id="2_ru0fd"]
+[ext_resource type="PackedScene" uid="uid://cxlna01qimfy" path="res://entity/Furgly.tscn" id="3_im0bk"]
 
 [node name="BaseLevel" type="Node3D"]
 
