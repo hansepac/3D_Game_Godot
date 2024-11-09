@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgnvj8xvn24ad"]
+
+[ext_resource type="PackedScene" uid="uid://vupfism0y8ub" path="res://map/base_map.tscn" id="1_kn7mw"]
+[ext_resource type="PackedScene" uid="uid://clmjonh52s66n" path="res://entity/player/player.tscn" id="2_ru0fd"]
+[ext_resource type="PackedScene" uid="uid://cxlna01qimfy" path="res://entity/dummy.tscn" id="3_im0bk"]
+
+[node name="BaseLevel" type="Node3D"]
+
+[node name="BaseMap" parent="." instance=ExtResource("1_kn7mw")]
+
+[node name="Player" parent="." instance=ExtResource("2_ru0fd")]
+
+[node name="Dummy" parent="." instance=ExtResource("3_im0bk")]
+transform = Transform3D(0.996912, -0.0785287, 0, 0.0785287, 0.996912, 0, 0, 0, 1, -0.000484824, 1.78235, -10.5854)

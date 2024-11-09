@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj8iiti4elip1"]
+
+[ext_resource type="PackedScene" uid="uid://clmjonh52s66n" path="res://entity/player/player.tscn" id="1_ngdnj"]
+[ext_resource type="PackedScene" uid="uid://cxlna01qimfy" path="res://entity/dummy.tscn" id="2_kj1ip"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4y7q7"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pnj2x"]
+size = Vector2(20, 20)
+
+[node name="Playground" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4y7q7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("PlaneMesh_pnj2x")
+
+[node name="Player" parent="." instance=ExtResource("1_ngdnj")]
+
+[node name="Dummy" parent="." instance=ExtResource("2_kj1ip")]
+transform = Transform3D(0.937349, -0.348392, 0, 0.348392, 0.937349, 0, 0, 0, 1, 0.128701, 1.52899, -6.27609)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.643776, 0.765214, 0, -0.765214, -0.643776, -7.06322, 11.7106, -22.3257)

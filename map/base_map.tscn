@@ -1,6 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vupfism0y8ub"]
-
-[ext_resource type="PackedScene" uid="uid://clmjonh52s66n" path="res://player.tscn" id="1_mfd5a"]
+[gd_scene load_steps=9 format=3 uid="uid://vupfism0y8ub"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -55,5 +53,3 @@ shadow_enabled = true
 
 [node name="Enivroment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4mccc")
-
-[node name="Player" parent="." instance=ExtResource("1_mfd5a")]
