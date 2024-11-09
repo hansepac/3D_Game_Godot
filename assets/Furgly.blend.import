@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgohi64lxi3f2"
-path="res://.godot/imported/Furgus.blend-214f0ecc280daa2c461b73fad993684f.scn"
+uid="uid://bmol7l2uuwoe8"
+path="res://.godot/imported/Furgly.blend-0c8872f1673bc0646c6dd847da4256e2.scn"
 
 [deps]
 
-source_file="res://assets/Furgus.blend"
-dest_files=["res://.godot/imported/Furgus.blend-214f0ecc280daa2c461b73fad993684f.scn"]
+source_file="res://assets/Furgly.blend"
+dest_files=["res://.godot/imported/Furgly.blend-0c8872f1673bc0646c6dd847da4256e2.scn"]
 
 [params]
 
