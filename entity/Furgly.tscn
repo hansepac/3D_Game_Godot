@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxlna01qimfy"]
 
-[ext_resource type="PackedScene" uid="uid://bmol7l2uuwoe8" path="res://assets/Furgly.blend" id="1_205mh"]
+[ext_resource type="PackedScene" uid="uid://bmol7l2uuwoe8" path="res://assets/entities/Furgly.blend" id="1_205mh"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxs3y"]
 size = Vector3(0.267975, 2.41733, 0.861328)
