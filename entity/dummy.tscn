@@ -1,15 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxlna01qimfy"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ewn44"]
+[ext_resource type="PackedScene" uid="uid://bmol7l2uuwoe8" path="res://assets/Furgly.blend" id="1_205mh"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4nq2s"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxs3y"]
+size = Vector3(0.267975, 2.41733, 0.861328)
 
 [node name="Dummy" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172409, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("CapsuleShape3D_ewn44")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0608099, -0.584847, -0.0641024)
+shape = SubResource("BoxShape3D_cxs3y")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_4nq2s")
+[node name="Furgly" parent="RigidBody3D/CollisionShape3D" instance=ExtResource("1_205mh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0261256, 0.412166, 0.0126693)
