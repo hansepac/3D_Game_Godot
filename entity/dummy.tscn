@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://l2ipauva8o5f"]
 
-[ext_resource type="PackedScene" uid="uid://pui7goau4owf" path="res://assets/Blorb.blend" id="1_chuqu"]
+[ext_resource type="PackedScene" path="res://assets/Blorb.blend" id="1_chuqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxs3y"]
 size = Vector3(2, 2, 2)

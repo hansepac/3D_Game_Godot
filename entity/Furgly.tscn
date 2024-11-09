@@ -1,19 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxlna01qimfy"]
+[gd_scene load_steps=2 format=3 uid="uid://byo2ptvj6w22u"]
 
-[ext_resource type="PackedScene" uid="uid://bmol7l2uuwoe8" path="res://assets/entities/Furgly.blend" id="1_205mh"]
+[ext_resource type="PackedScene" uid="uid://ud0m175u55dh" path="res://assets/entities/furgly.blend" id="1_afyrs"]
 
+[node name="Furgly" type="Node3D"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cxs3y"]
-size = Vector3(0.267975, 2.41733, 0.861328)
-
-[node name="Dummy" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172409, 0)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0608099, -0.584847, -0.0641024)
-shape = SubResource("BoxShape3D_cxs3y")
-
-[node name="Furgly" parent="RigidBody3D/CollisionShape3D" instance=ExtResource("1_205mh")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0261256, 0.412166, 0.0126693)
+[node name="furgly" parent="." instance=ExtResource("1_afyrs")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)

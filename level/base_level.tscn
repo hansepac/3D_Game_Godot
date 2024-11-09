@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://vupfism0y8ub" path="res://map/base_map.tscn" id="1_4elwa"]
 [ext_resource type="PackedScene" uid="uid://caae1vixsym55" path="res://entity/player/player.tscn" id="2_1rh3d"]
-[ext_resource type="PackedScene" uid="uid://cxlna01qimfy" path="res://entity/Furgly.tscn" id="3_t2dsw"]
+[ext_resource type="PackedScene" uid="uid://byo2ptvj6w22u" path="res://entity/Furgly.tscn" id="3_t2dsw"]
 [ext_resource type="PackedScene" uid="uid://l2ipauva8o5f" path="res://entity/dummy.tscn" id="4_pd3wl"]
 
 [node name="BaseLevel" type="Node3D"]
 
 [node name="BaseMap" parent="." instance=ExtResource("1_4elwa")]
 
-[node name="Dummy" parent="." instance=ExtResource("3_t2dsw")]
-transform = Transform3D(-0.0365216, 0, -0.999333, 0, 1, 0, 0.999333, 0, -0.0365216, 0.0028553, 1.89058, -10.7806)
-
 [node name="Dummy2" parent="." instance=ExtResource("4_pd3wl")]
 transform = Transform3D(0.0387353, -0.0530624, -0.99784, 0.00637184, 0.998582, -0.0528545, 0.999229, -0.00431074, 0.0390184, -0.0301127, 1.42643, -6.15367)
 
 [node name="Player" parent="." instance=ExtResource("2_1rh3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27707, 0)
+
+[node name="Furgly" parent="." instance=ExtResource("3_t2dsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22213, 2.39497, -10.4051)
