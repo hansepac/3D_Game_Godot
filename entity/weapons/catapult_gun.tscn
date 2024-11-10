@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn3moyq5jftgs"]
+
+[ext_resource type="PackedScene" uid="uid://dn4gmhookm45m" path="res://assets/weapons/catapult_gun.blend" id="1_n0bgj"]
+[ext_resource type="Script" path="res://entity/weapons/catapult_gun.gd" id="1_n0v77"]
+
+[node name="CatapultGun" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00184488, -0.00546825, 0.000353336)
+script = ExtResource("1_n0v77")
+
+[node name="catapult_gun" parent="." instance=ExtResource("1_n0bgj")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="ProjectileSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313646, -0.0128516)

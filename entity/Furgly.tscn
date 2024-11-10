@@ -4,5 +4,4 @@
 
 [node name="Furgly" type="Node3D"]
 
-[node name="furgly" parent="." instance=ExtResource("1_afyrs")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+[node name="furgly2" parent="." instance=ExtResource("1_afyrs")]

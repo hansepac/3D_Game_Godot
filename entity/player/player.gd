@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var horiz_direction: Vector3
 var rotation_target_player: float
 var rotation_target_head: float
+#var gun: Node3D = load("res://entity/weapons/catapult_gun.tscn")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,30 +32,41 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		set_rotation_target(event.relative)
 
+func _physics_process(delta: float) -> void:
+	var on_floor = is_on_floor()
+	var speed = SPEED
+	
+	# If sprint
+	if Input.is_action_pressed("sprint"):
+		speed = 50
+		
+	
+	# Movement Direction
 	if Input.is_action_pressed("forward") or Input.is_action_pressed("backward") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		horiz_direction = transform.basis * Vector3(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			0,
 			Input.get_action_strength("backward") - Input.get_action_strength("forward")
-		).normalized()
+		)
 	else:
 		horiz_direction = Vector3.ZERO
-
-func _physics_process(delta: float) -> void:
-	var on_floor = is_on_floor()
-
+	
+	# Jump and Gravity
 	if not on_floor:
 		velocity.y -= gravity * delta
 	else:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y += JUMP_VEL
 
-	velocity.x = move_toward(velocity.x, horiz_direction.x * SPEED, ACCEL * delta)
-	velocity.z = move_toward(velocity.z, horiz_direction.z * SPEED, ACCEL * delta)
+	# Update Horizontal movement
+	velocity.x = move_toward(velocity.x, horiz_direction.x * speed, ACCEL * delta)
+	velocity.z = move_toward(velocity.z, horiz_direction.z * speed, ACCEL * delta)
 	
+	# Whatever the fetch this does
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	# Update camera aim
 	rotate_player(delta)
 
 func set_rotation_target(mouse_motion : Vector2):

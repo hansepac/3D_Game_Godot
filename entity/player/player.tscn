@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://caae1vixsym55"]
+[gd_scene load_steps=7 format=3 uid="uid://caae1vixsym55"]
 
 [ext_resource type="Script" path="res://entity/player/player.gd" id="1_f041i"]
-[ext_resource type="PackedScene" uid="uid://crwrvo38w6hk1" path="res://entity/player/head.tscn" id="2_a2lg8"]
-[ext_resource type="PackedScene" uid="uid://dn4gmhookm45m" path="res://assets/weapons/catipult_gun.blend" id="3_6m2xx"]
+[ext_resource type="PackedScene" uid="uid://cn3moyq5jftgs" path="res://entity/weapons/catapult_gun.tscn" id="2_sofsc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f04gv"]
 radius = 0.35
@@ -11,6 +10,14 @@ height = 1.8
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ce4hv"]
 radius = 0.35
 height = 1.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_lpyg7"]
+radius = 0.35
+height = 0.7
+
+[sub_resource type="SphereMesh" id="SphereMesh_kuod7"]
+radius = 0.09
+height = 0.14
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_f041i")
@@ -22,10 +29,19 @@ shape = SubResource("CapsuleShape3D_f04gv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.339783, 0)
 mesh = SubResource("CapsuleMesh_ce4hv")
 
-[node name="Head" parent="." instance=ExtResource("2_a2lg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54398, 0)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.536643, 0)
 
-[node name="catipult_gun" parent="Head" instance=ExtResource("3_6m2xx")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.238052, -0.55147, -0.30628)
+[node name="MeshHead" type="MeshInstance3D" parent="Head"]
+mesh = SubResource("SphereMesh_lpyg7")
+skeleton = NodePath("")
 
-[node name="Gun" type="Node3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238052, -0.0134797, -0.30628)
+
+[node name="MeshHand" type="MeshInstance3D" parent="Hand"]
+mesh = SubResource("SphereMesh_kuod7")
+
+[node name="CatapultGun" parent="Hand" instance=ExtResource("2_sofsc")]

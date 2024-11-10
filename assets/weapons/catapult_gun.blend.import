@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dn4gmhookm45m"
-path="res://.godot/imported/catipult_gun.blend-fb81d57f2218d7bd268a8ceb9810d6ca.scn"
+path="res://.godot/imported/catapult_gun.blend-ccecab13888528ae5dcbafe6e7dfc1eb.scn"
 
 [deps]
 
-source_file="res://assets/weapons/catipult_gun.blend"
-dest_files=["res://.godot/imported/catipult_gun.blend-fb81d57f2218d7bd268a8ceb9810d6ca.scn"]
+source_file="res://assets/weapons/catapult_gun.blend"
+dest_files=["res://.godot/imported/catapult_gun.blend-ccecab13888528ae5dcbafe6e7dfc1eb.scn"]
 
 [params]
 

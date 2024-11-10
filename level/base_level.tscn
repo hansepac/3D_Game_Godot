@@ -7,8 +7,6 @@
 
 [node name="BaseLevel" type="Node3D"]
 
-[node name="BaseMap" parent="." instance=ExtResource("1_4elwa")]
-
 [node name="Dummy2" parent="." instance=ExtResource("4_pd3wl")]
 transform = Transform3D(0.0387353, -0.0530624, -0.99784, 0.00637184, 0.998582, -0.0528545, 0.999229, -0.00431074, 0.0390184, -0.0301127, 1.42643, -6.15367)
 
@@ -17,3 +15,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27707, 0)
 
 [node name="Furgly" parent="." instance=ExtResource("3_t2dsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22213, 2.39497, -10.4051)
+
+[node name="main" parent="." instance=ExtResource("1_4elwa")]
