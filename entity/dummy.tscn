@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://l2ipauva8o5f"]
 
-[ext_resource type="PackedScene" path="res://assets/Blorb.blend" id="1_chuqu"]
+[ext_resource type="PackedScene" uid="uid://dxjq0r8j3bhx5" path="res://assets/entities/blorb.blend" id="1_6y6e3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxs3y"]
-size = Vector3(2, 2, 2)
+size = Vector3(1.2135, 1.21463, 1.22386)
 
 [node name="Dummy" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172409, 0)
@@ -11,7 +11,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172409, 0)
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00506592, -0.001297, 0.000831604)
 shape = SubResource("BoxShape3D_cxs3y")
 
-[node name="Blorb" parent="RigidBody3D/CollisionShape3D" instance=ExtResource("1_chuqu")]
-transform = Transform3D(1, -0.000499967, 0.000724277, 0.000501499, 0.999998, -0.00211003, -0.000723217, 0.00211039, 0.999997, 0, 0, 0)
+[node name="blorb" parent="RigidBody3D" instance=ExtResource("1_6y6e3")]
