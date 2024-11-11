@@ -23,10 +23,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var horiz_direction: Vector3
 var rotation_target_player: float
 var rotation_target_head: float
-#var gun: Node3D = load("res://entity/weapons/catapult_gun.tscn")
+@export var weapon_scene: PackedScene = load("res://entity/weapons/catapult_gun.tscn")
+@export var weapon = weapon_scene.instantiate()
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	weapon.position = $Hand.position
+	$Hand/MeshHand.add_child(weapon)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -39,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	# If sprint
 	if Input.is_action_pressed("sprint"):
 		speed = 50
-		
 	
 	# Movement Direction
 	if Input.is_action_pressed("forward") or Input.is_action_pressed("backward") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
@@ -66,6 +68,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	# Fire gun
+	if Input.is_action_just_pressed("attack"):
+		weapon.fire()
+		
+	
 	# Update camera aim
 	rotate_player(delta)
 
@@ -84,10 +91,12 @@ func rotate_player(delta: float):
 		quaternion = quaternion.slerp(Quaternion(Vector3.UP, rotation_target_player), KEY_BIND_MOUSE_ACCEL * delta)
 		# Same again for head
 		$Head.quaternion = $Head.quaternion.slerp(Quaternion(Vector3.RIGHT, rotation_target_head), KEY_BIND_MOUSE_ACCEL * delta)
+		$Hand.quaternion = $Hand.quaternion.slerp(Quaternion(Vector3.RIGHT, rotation_target_head), KEY_BIND_MOUSE_ACCEL * delta)
 	else:
 		# If mouse accel is turned off, simply set to target
 		quaternion = Quaternion(Vector3.UP, rotation_target_player)
 		$Head.quaternion = Quaternion(Vector3.RIGHT, rotation_target_head)
+		$Hand.quaternion = Quaternion(Vector3.RIGHT, rotation_target_head)
 	
 	
 	

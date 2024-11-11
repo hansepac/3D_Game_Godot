@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://caae1vixsym55"]
+[gd_scene load_steps=6 format=3 uid="uid://caae1vixsym55"]
 
 [ext_resource type="Script" path="res://entity/player/player.gd" id="1_f041i"]
-[ext_resource type="PackedScene" uid="uid://cn3moyq5jftgs" path="res://entity/weapons/catapult_gun.tscn" id="2_sofsc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f04gv"]
 radius = 0.35
@@ -36,12 +35,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.536643, 0)
 mesh = SubResource("SphereMesh_lpyg7")
 skeleton = NodePath("")
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera" type="Camera3D" parent="Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Camera"]
+
+[node name="MeshHead" type="MeshInstance3D" parent="Head/Camera"]
+mesh = SubResource("SphereMesh_lpyg7")
+skeleton = NodePath("")
 
 [node name="Hand" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238052, -0.0134797, -0.30628)
 
 [node name="MeshHand" type="MeshInstance3D" parent="Hand"]
 mesh = SubResource("SphereMesh_kuod7")
-
-[node name="CatapultGun" parent="Hand" instance=ExtResource("2_sofsc")]
